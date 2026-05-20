@@ -32,14 +32,14 @@ const createLoginIntoDB = async (payload: {
   }
 
   // token generate
-  const jwtpayload = {
+  const jwtPayload = {
     id: user.id,
     name: user.name,
     email: user.email,
     is_active: user.is_active,
   };
 
-  const accessToken = jwt.sign(jwtpayload, config.secret as string, {
+  const accessToken = jwt.sign(jwtPayload, config.secret as string, {
     expiresIn: "1d",
   });
   return { accessToken };
